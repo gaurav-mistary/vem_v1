@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<title>Admin -Login</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="description" content="#">
+	{% load static %}
+	<link rel="icon" href="https://colorlib.com//polygon/adminty/files/assets/images/favicon.ico" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/bootstrap.min.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/themify-icons.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/icofont.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/feather.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/style.css' %}">
+</head>
+<body>
+
+<div class="theme-loader">
+	<div class="ball-scale">
+		<div class='contain'>
+			<div class="ring">
+				<div class="frame"></div>
+			</div>
+			<div class="ring">
+				<div class="frame"></div>
+			</div>
+			<div class="ring">
+				<div class="frame"></div>
+			</div>
+			<div class="ring">
+				<div class="frame"></div>
+			</div>
+			<div class="ring">
+				<div class="frame"></div>
+			</div>
+			<div class="ring">
+				<div class="frame"></div>
+			</div>
+			<div class="ring">
+				<div class="frame"></div>
+			</div>
+			<div class="ring">
+				<div class="frame"></div>
+			</div>
+			<div class="ring">
+				<div class="frame"></div>
+			</div>
+			<div class="ring">
+				<div class="frame"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div id="pcoded" class="pcoded load-height">
+		<div class="pcoded-overlay-box"></div>
+		<div class="pcoded-container navbar-wrapper">
+			<nav class="navbar header-navbar pcoded-header auth-header" header-theme="theme1">
+				<div class="navbar-wrapper">
+
+					<div class="navbar-container container-fluid">
+						<ul class="nav-left">
+							<li>
+								<a href="#!" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript:toggleFullScreen()" data-cf-modified-73415284079506f2ca8f07ad-="">
+									<i class="feather icon-maximize full-screen"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+	<section class="login-block with-header" >
+
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12">
+
+						<form class="md-float-material form-material m-t-40 m-b-40" method="POST">
+							{% csrf_token %}
+							<div class="auth-box card">
+								<div class="card-block">
+									<div class="row m-b-20">
+										<div class="col-md-12">
+											<h3 class="text-center">Sign In</h3>
+										</div>
+									</div>
+									<div class="form-group form-primary">
+										<input type="text" name="username" class="form-control" required="" placeholder="Your Username">
+										<span class="form-bar"></span>
+									</div>
+									<div class="form-group form-primary">
+										<input type="password" name="password" class="form-control" required="" placeholder="Password">
+										<span class="form-bar"></span>
+									</div>
+									<div class="row m-t-30">
+										<div class="col-md-12">
+											<input type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20" value="Sign in" />
+										</div>
+									</div>
+									<hr/>
+									<div class="row">
+										<div class="col-md-10">
+											<p class="text-inverse text-left m-b-0">Thank you.</p>
+											<p class="text-inverse text-left"><a href="#"><b class="f-w-600">Back to website</b></a></p>
+										</div>
+										<div class="col-md-2">
+											<!-- <img src="https://colorlib.com//polygon/adminty/files/assets/images/auth/Logo-small-bottom.png" alt="small-logo.png"> -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+<script type="73415284079506f2ca8f07ad-text/javascript" src="{% static 'admin/js/jquery.min.js' %}"></script>
+<script type="73415284079506f2ca8f07ad-text/javascript" src="{% static 'admin/js/jquery-ui.min.js' %}"></script>
+<script type="73415284079506f2ca8f07ad-text/javascript" src="{% static 'admin/js/popper.min.js' %}"></script>
+<script type="73415284079506f2ca8f07ad-text/javascript" src="{% static 'admin/js/bootstrap.min.js' %}"></script>
+<!-- jquery slimscroll js -->
+<script type="73415284079506f2ca8f07ad-text/javascript" src="{% static 'admin/js/jquery.slimscroll.js' %}"></script>
+<!-- modernizr js -->
+<script type="73415284079506f2ca8f07ad-text/javascript" src="{% static 'admin/js/modernizr.js' %}"></script>
+<script type="73415284079506f2ca8f07ad-text/javascript" src="{% static 'admin/js/css-scrollbars.js' %}"></script>
+<!-- i18next.min.js -->
+<script type="73415284079506f2ca8f07ad-text/javascript" src="{% static 'admin/js/i18next.min.js' %}"></script>
+<script type="73415284079506f2ca8f07ad-text/javascript" src="{% static 'admin/js/i18nextXHRBackend.min.js' %}"></script>
+<script type="73415284079506f2ca8f07ad-text/javascript" src="{% static 'admin/js/i18nextBrowserLanguageDetector.min.js' %}"></script>
+<script type="73415284079506f2ca8f07ad-text/javascript" src="{% static 'admin/js/jquery-i18next.min.js' %}"></script>
+<!-- Custom js -->
+<script type="73415284079506f2ca8f07ad-text/javascript" src="{% static 'admin/js/script.js' %}"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="73415284079506f2ca8f07ad-text/javascript"></script>
+<script type="73415284079506f2ca8f07ad-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/a2bd7673/cloudflare-static/rocket-loader.min.js" data-cf-settings="73415284079506f2ca8f07ad-|49" defer=""></script></body>
+
+</html>
