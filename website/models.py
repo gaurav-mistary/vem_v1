@@ -9,8 +9,8 @@ class User(AbstractUser):
 	is_individual = models.BooleanField(default=False)
 	is_company = models.BooleanField(default=False)
 	is_verified = models.BooleanField(default=False)
-	individual = models.ForeignKey('individual',null=True, on_delete=models.CASCADE)
-	company = models.ForeignKey('company',null=True, on_delete=models.CASCADE)
+	individual = models.ForeignKey('individual',null=True,blank=True,  on_delete=models.CASCADE)
+	company = models.ForeignKey('company',null=True,blank=True,  on_delete=models.CASCADE)
 
 	def __str__(self):
 		return self.email
