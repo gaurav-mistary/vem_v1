@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model
-from .models import individual, company
+from .models import individual, company, machine, inventory
 from .forms import register_individual_form, register_company_form
 from django.views.generic import TemplateView
 from django.contrib.auth import login, logout, authenticate
@@ -127,3 +127,26 @@ def activate(request, uidb64, token):
 		return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
 	else:
 		return HttpResponse('Activation link is invalid!')
+
+def add_machine(request):
+	if request.method == 'POST':
+		user = User.objects.get(pk=16)
+		machine.objects.create(
+			m_added_by = user,
+			m_name = request.POST['m_name'],
+			m_image = request.POST['m_image'],
+			m_subtype = request.POST.get('m_subtype'),
+			m_location = request.POST.get('m_location'),
+			m_brand = request.POST.get('m_brand'),
+			m_manufacturing_year = request.POST['m_manufacturing_year'],
+			m_size = request.POST['m_size'],
+			m_travel_length = request.POST['m_travel_length'],
+			m_accuracy = request.POST['m_accuracy'],
+			m_spindle_rpm = request.POST['m_spindle_rpm'],
+			m_tonnage = request.POST['m_tonnage'],
+			m_ra_value = request.POST['m_ra_value'],
+			m_current_rating = request.POST['m_current_rating'],
+			m_tie_bar = request.POST['m_tie_bar'],
+			m_shot_weight = request.POST['m_shot_weight'],
+		)
+	return render(request, 'website/add_machine.html')

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Machine</title>
+</head>
+<body>
+	<form method="POST">
+		{% csrf_token %}<br>
+		Machine Name <input type="text" name="m_name">
+		<br><br>
+		Machine Image <input type="file" name="m_image">
+		<br><br>
+		Machine Subtype <input type="text" name="m_subtype">
+		<br><br>
+		Machine Location <input type="text" name="m_location">
+		<br><br>
+		Machine Brand <input type="text" name="m_brand">
+		<br><br>
+		Machine Manufacturing Date <input type="text" name="m_manufacturing_year">
+		<br><br>
+		Machine Size <input type="text" name="m_size">
+		<br><br>
+		Machine Travel Length <input type="text" name="m_travel_length">
+		<br><br>
+		Machine Spindle RPM <input type="text" name="m_spindle_rpm">
+		<br><br>
+		Machine Tonnage <input type="text" name="m_tonnage">
+		<br><br>
+		Machine Accuracy <input type="text" name="m_accuracy">
+		<br><br>
+		Machine RA Value <input type="text" name="m_ra_value">
+		<br><br>
+		Machine Current Rating <input type="text" name="m_current_rating">
+		<br><br>
+		Machine Tie Bar <input type="text" name="m_tie_bar">
+		<br><br>
+		Machine Shot Weight <input type="text" name="m_shot_weight">
+		<br><br>
+		 <input type="submit" name="m_image" value="Submit">
+	</form>
+</body>
+</html>

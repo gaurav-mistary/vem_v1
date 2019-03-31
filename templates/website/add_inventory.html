@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Inventory</title>
+</head>
+<body>
+	<form method="POST">
+		{% csrf_token %}<br>
+		Inventory Brand <input type="text" name="i_brand">
+		<br><br>
+		Inventory Size MM <input type="text" name="i_size_mm"> (mm)
+		<br><br>
+		Inventory Size Inch <input type="text" name="i_size_inch"> (inch)
+		<br><br>
+		Inventory Type <input type="text" name="i_type">
+		<br><br>
+		Inventory Diameter <input type="text" name="i_diameter">
+		<br><br>
+		Inventory Coller Thickness <input type="text" name="i_collar_thickness">
+		<br><br>
+		Inventory Length <input type="text" name="i_length">
+		<br><br>
+		Inventory Width <input type="text" name="i_width">
+		<br><br>
+		Inventory Height <input type="text" name="i_height">
+		<br><br>
+		Inventory Other <input type="text" name="i_other">
+		<br><br>
+		 <input type="submit" name="m_image" value="Submit">
+	</form>
+</body>
+</html>
