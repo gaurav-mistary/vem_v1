@@ -39,7 +39,7 @@ class company(models.Model):
 class machine(models.Model):
 	m_added_by = models.ForeignKey(User, null=False, blank=False, on_delete=models.CASCADE)
 	m_name = models.CharField(max_length=60, null=False, blank=False)
-	m_image = models.ImageField(upload_to="images/machines/", blank=True, default='defImages/defMachine.jpeg')
+	m_image = models.ImageField(upload_to="images/machines/", blank=True, default='static/defImages/defMachine.jpeg')
 	m_upload_date = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 	m_verified = models.BooleanField(default=False, null=True, blank=True)
 	m_avail = models.BooleanField(default=False, null=True, blank=True)

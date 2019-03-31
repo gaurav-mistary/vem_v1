@@ -130,7 +130,7 @@ def activate(request, uidb64, token):
 
 def add_machine(request):
 	if request.method == 'POST':
-		user = User.objects.get(pk=16)
+		user = User.objects.get(pk=2)
 		machine.objects.create(
 			m_added_by = user,
 			m_name = request.POST['m_name'],
