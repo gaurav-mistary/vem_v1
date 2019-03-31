@@ -13,7 +13,7 @@ SECRET_KEY = '9uh^zhs+!qfoxnmtw3$o8a!ijwc_@f+1&_x1=()ve77r#qwsva'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.109']
 
 
 # Application definition
@@ -28,6 +28,7 @@ INSTALLED_APPS = [
 	'website',
 	'admin_section',
 	'widget_tweaks',
+	'phonenumber_field',
 
 ]
 

@@ -13,6 +13,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.core.mail import EmailMessage
+from phonenumber_field.modelfields import PhoneNumberField
 
 User = get_user_model()
 
@@ -52,7 +53,6 @@ def register_company(request):
 			user.save()
 			company.objects.create(user=user, state=form.cleaned_data.get('state'), city=form.cleaned_data.get('city'))
 			current_site = get_current_site(request)
-			current_site = get_current_site(request)
 			mail_subject = 'Activate your VEM account.'
 			message = render_to_string('admin/acc_active_email.html', {
 				'user': user,
@@ -78,16 +78,22 @@ def register_company(request):
 
 def register_individual(request):
 	if request.method == 'POST':
-		print(request.POST)
 		form = register_individual_form(request.POST)
 		if form.is_valid():
+
+			if form.cleaned_data.get('if_other') == "":
+				if_other = None
+			else:
+				if_other = form.cleaned_data.get('if_other')
 			user = form.save()
+
 			
 			user.refresh_from_db()
 			user.is_active = False
 			user.is_individual = True
+			user.individual = individual.objects.create(working_industry=form.cleaned_data.get('working_industry'),phone_number = "+91"+form.cleaned_data.get('phone_number'),if_other = if_other)
 			user.save()
-			individual.objects.create(user=user, state=form.cleaned_data.get('state'))
+
 			current_site = get_current_site(request)
 			mail_subject = 'Activate your VEM account.'
 			message = render_to_string('admin/acc_active_email.html', {
@@ -101,9 +107,6 @@ def register_individual(request):
 						mail_subject, message, to=[to_email]
 			)
 			email.send()
-			print("valid")
-		else:
-			print('not valid')
 		return HttpResponse('Please confirm your email address to complete the registration')
 
 	else:

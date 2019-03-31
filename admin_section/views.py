@@ -1,6 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
 from .models import *
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
@@ -46,6 +45,11 @@ def machine_requested(request):
 	return render(request,'admin/admin_machine_requested.html')
 
 def user_authentication_request(request):
+	if request.POST:
+		if 'accept' in request.POST:
+			print(request.POST['email'])
+			User.objects.filter(email=request.POST['email']).update(is_verified=True)
+			
 	user = User.objects.all()
 	individual_verification_list = []
 	for user_obj in user:
@@ -56,8 +60,10 @@ def user_authentication_request(request):
 		elif user_obj.is_individual:
 			individual_verification_list.append(user_obj)
 
-	for obj in individual_verification_list:
-		print(obj.first_name)
+	# for obj in individual_verification_list:
+	# 	print(obj)
+
+
 
 	content = {
 		'individual_verification_list' : individual_verification_list,

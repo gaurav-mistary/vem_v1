@@ -105,9 +105,15 @@
 										</div>	
 
 										<div class="form-group">
-											<label class="sr-only" for="form-last-name">Last name</label>
-											{% render_field form.state name="state" placeholder="State..." class="form-last-name form-control" id="req-field" %}
-										</div>	  
+											<label class="sr-only" for="form-last-name">Working Industry</label>
+											{% render_field form.working_industry name="working_industry" placeholder="Working Industry..." class="form-last-name form-control" id="req-field" %}
+										</div>
+
+										<div class="form-group">
+											<label class="sr-only" for="form-last-name">If Other</label>
+											{% render_field form.if_other name="if_other" placeholder="If Other..." class="form-last-name form-control"%}
+										</div>
+											  
 
 										<button type="button" class="btn btn-next">Next</button>
 									</div>
@@ -125,19 +131,29 @@
 									</div>
 									<div class="form-bottom">
 										<div class="form-group">
-											<label class="sr-only" for="form-email">Email</label>
+											<label class="sr-only" for="form-last-name">Email</label>
 											{% render_field form.email name="email" placeholder="Email..." class="form-email form-control" id="req-field" %}
+										</div>	
+
+										<div class="form-group">
+											<label class="sr-only" for="form-last-name">Phone Number</label>
+											{% render_field form.phone_number name="phone_number" placeholder="Phone Number..." class="form-email form-control" id="req-field" %}
 										</div>
+
 										<div class="form-group">
 											<label class="sr-only" for="form-password">Password</label>
 											{% render_field form.password1 name="password" placeholder="Password..." class="form-password form-control" id="req-field"  %}
 										</div>
 										<div class="form-group">
 											<label class="sr-only" for="form-password">Password</label>
-											{% render_field form.password2 name="password" placeholder="Password..." class="form-password form-control" id="req-field"  %}
+											{% render_field form.password2 name="password" placeholder="Confirm Password..." class="form-password form-control" id="req-field"  %}
 										</div>
 
-
+										{{ formset.errors }}
+										{{ formset.non_field_errors }}
+										{{ form.errors }}
+										{{ form.non_field_errors }}
+										{{ formset.non_form_errors }}
 
 										<button type="button" class="btn btn-previous">Previous</button>
 										<input type="submit" class="btn" value="Sign me up!">
